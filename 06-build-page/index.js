@@ -9,7 +9,6 @@ fs.copyFile(path.join(__dirname, 'template.html'), path.join(__dirname, 'project
 });
 fs.readdir(path.join(__dirname, 'components'), {withFileTypes: true}, (err) => {
   if (err) throw err;
-
   function writeHtml() {
     fs.readFile(path.join(__dirname, 'project-dist', 'index.html'), 'utf-8', (err, data) => {
       if (err) throw err;
@@ -41,7 +40,6 @@ fs.readdir(path.join(__dirname, 'components'), {withFileTypes: true}, (err) => {
   }
   writeHtml();
 })
-
 fs.readdir(path.join(__dirname, 'styles'), {withFileTypes: true}, (err, items) => {
   if (err) throw err;
   fs.writeFile(path.join(__dirname, 'project-dist', 'style.css'), '', (err) => {
